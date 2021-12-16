@@ -2,56 +2,50 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
-  extends: ["eslint:recommended", "airbnb-base", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended", "plugin:wc/best-practice", "plugin:lit/recommended", "plugin:storybook/recommended"],
+  extends: [
+    'eslint:recommended',
+    'airbnb-base',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:wc/best-practice',
+    'plugin:lit/recommended',
+    'plugin:storybook/recommended',
+  ],
   settings: {
-    wc: {
-      elementBaseClasses: ['LitElement']
-    },
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx']
-    },
+    wc: { elementBaseClasses: ['LitElement'] },
+    'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx'] },
     'import/resolver': {
       typescript: {},
-      node: {
-        extensions: ['.js', '.ts']
-      }
-    }
+      node: { extensions: ['.js', '.ts'] },
+    },
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   rules: {
     semi: 2,
     'no-console': 'off',
-    'no-unused-vars': ['warn', {
-      args: 'none'
-    }],
+    'no-unused-vars': ['warn', { args: 'none' }],
     'no-constant-condition': 1,
-    'no-global-assign': ['error', {
-      exceptions: ['require']
-    }],
+    'no-global-assign': ['error', { exceptions: ['require'] }],
     // new rule
     'linebreak-style': 0,
     'arrow-parens': [2, 'as-needed'],
     'max-len': ['error', {
       code: 120,
-      ignoreComments: true
+      ignoreComments: true,
     }],
-    'object-curly-newline': ['error', {
-      multiline: true
-    }],
+    'object-curly-newline': ['error', { multiline: true }],
     // variables false for pub/sub hook function
     'no-use-before-define': ['error', {
       functions: true,
       classes: true,
-      variables: false
+      variables: false,
     }],
-    'no-param-reassign': ['error', {
-      props: false
-    }],
+    'no-param-reassign': ['error', { props: false }],
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
@@ -70,10 +64,10 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'warn',
     'no-alert': 'off',
     'lines-between-class-members': 'off',
-    'lit/quoted-expressions': 'error'
+    'lit/quoted-expressions': 'error',
   },
   globals: {
     NODE_ENV: true,
-    API_HOST: true
-  }
+    API_HOST: true,
+  },
 };
